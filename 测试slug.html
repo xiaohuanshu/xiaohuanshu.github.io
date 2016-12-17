@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Python - Reot</title>
+    <title>测试标题 - Reot</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -9,32 +9,38 @@
 
 
 
+<link rel="canonical" href="./测试slug.html">
 
-    <meta name="author" content="xiaohuanshu" />
-    <meta name="keywords" content="Python" />
+        <meta name="author" content="xiaohuanshu" />
+        <meta name="keywords" content="pelican,publishing" />
+        <meta name="description" content="欢迎来到我的博客" />
 
-    <!-- Open Graph tags -->
         <meta property="og:site_name" content="Reot" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="Reot"/>
-        <meta property="og:url" content=".."/>
-        <meta property="og:description" content="Reot"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="测试标题"/>
+        <meta property="og:url" content="./测试slug.html"/>
+        <meta property="og:description" content="欢迎来到我的博客"/>
+        <meta property="article:published_time" content="2016-12-17" />
+            <meta property="article:section" content="helloworld" />
+            <meta property="article:tag" content="pelican" />
+            <meta property="article:tag" content="publishing" />
+            <meta property="article:author" content="xiaohuanshu" />
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="../theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="../theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="./theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="../theme/css/pygments/native.css" rel="stylesheet">
-    <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
+    <link href="./theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
 
-        <link href="../feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="Reot ATOM Feed"/>
 
 
 
-        <link href="../feeds/python.atom.xml" type="application/atom+xml" rel="alternate"
-              title="Reot Python ATOM Feed"/>
+        <link href="./feeds/helloworld.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Reot helloworld ATOM Feed"/>
 
 </head>
 <body>
@@ -48,13 +54,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="../" class="navbar-brand">
+            <a href="./" class="navbar-brand">
 Reot            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
                         <li class="active">
-                            <a href="../category/python.html">Python</a>
+                            <a href="./category/helloworld.html">Helloworld</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -68,13 +74,72 @@ Reot            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-            <article>
-                <h2><a href="../my-super-post.html">测试</a></h2>
-                <div class="summary"><p>Short version for index and feeds</p>
-                    <a class="btn btn-default btn-xs" href="../my-super-post.html">more ...</a>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="./测试slug.html"
+                       rel="bookmark"
+                       title="Permalink to 测试标题">
+                        测试标题
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2016-12-17T10:20:00+08:00"> 六 17 十二月 2016</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="./tag/pelican.html">pelican</a>
+        /
+	<a href="./tag/publishing.html">publishing</a>
+    
+</footer><!-- /.post-info -->                    </div>
                 </div>
-            </article>
-            <hr/>
+                <p>欢迎来到我的博客</p>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'reot'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = '测试slug';
+                var disqus_url = './测试slug.html';
+
+            var disqus_config = function () {
+                this.language = "zh";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
 
         </div>
         <div class="col-sm-3" id="sidebar">
@@ -127,7 +192,7 @@ Reot            </a>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2010 xiaohuanshu
+         <div class="col-xs-10">&copy; 2016 xiaohuanshu
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
@@ -135,13 +200,13 @@ Reot            </a>
       </div>
    </div>
 </footer>
-<script src="../theme/js/jquery.min.js"></script>
+<script src="./theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../theme/js/bootstrap.min.js"></script>
+<script src="./theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="../theme/js/respond.min.js"></script>
+<script src="./theme/js/respond.min.js"></script>
 
     <!-- Disqus -->
     <script type="text/javascript">
