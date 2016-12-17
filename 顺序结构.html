@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>顺序结构 - Reot</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="./顺序结构.html">
+
+        <meta name="author" content="xiaohuanshu" />
+        <meta name="keywords" content="c语言,helloc,教程" />
+        <meta name="description" content="hello,c c语言学习教程 序言" />
+
+        <meta property="og:site_name" content="Reot" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="顺序结构"/>
+        <meta property="og:url" content="./顺序结构.html"/>
+        <meta property="og:description" content="hello,c c语言学习教程 序言"/>
+        <meta property="article:published_time" content="2016-12-17" />
+            <meta property="article:section" content="helloc" />
+            <meta property="article:tag" content="c语言" />
+            <meta property="article:tag" content="helloc" />
+            <meta property="article:tag" content="教程" />
+            <meta property="article:author" content="xiaohuanshu" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="./theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="./theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="./theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
+
+        <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Reot ATOM Feed"/>
+
+
+
+        <link href="./feeds/helloc.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Reot helloc ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="./" class="navbar-brand">
+Reot            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="./category/helloc.html">Helloc</a>
+                        </li>
+                        <li >
+                            <a href="./category/helloworld.html">Helloworld</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="./顺序结构.html"
+                       rel="bookmark"
+                       title="Permalink to 顺序结构">
+                        顺序结构
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2016-12-17T10:21:00+08:00"> 六 17 十二月 2016</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="./tag/cyu-yan.html">c语言</a>
+        /
+	<a href="./tag/helloc.html">helloc</a>
+        /
+	<a href="./tag/jiao-cheng.html">教程</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <ul>
+<li>如何才能解释helloworld这段代码呢？一行一行解释可能解释不清楚，我们不防先了解一下C语言中的顺序结构。</li>
+</ul>
+<h1>顺序结构</h1>
+<ul>
+<li>何为顺序结构？我们再拿名叫电脑的士兵的例子来说。我们回顾一下我们对电脑下的命令：</li>
+<li>
+<ul>
+<li>你：『电脑！』</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>电脑：『到！』</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>你：『伸出右手，抬出左腿！』----------------------①</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>电脑：『是！』</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>你：『伸出左手，缩回右手，放下左腿，抬出右腿！』----②</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>电脑：『是！』</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>你：『立正！』-----------------------------------③</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>电脑：『是！』</li>
+</ul>
+</li>
+<li>我们可以发现我们对『他』一共施了三条命令①②③。而这三条命令是按照顺序执行的。</li>
+<li><img alt="2015-04-25/553b4e94b72d3" src="http://box.kancloud.cn/2015-04-25_553b4e94b72d3.png"></li>
+<li>这就是顺序结构，回头看看我们刚才的代码。</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt; --------------------①</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span> <span class="o">-----------------------</span><span class="err">②</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;helloworld&quot;</span><span class="p">);</span> <span class="o">-------------</span><span class="err">③</span>  
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> <span class="o">-------------------------</span><span class="err">④</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<ul>
+<li>一共有四条命令。它们同样也是顺序执行的。</li>
+<li>我们来设想一下，我们如何给计算机下命令才能让它输出helloworld呢？</li>
+<li>直接在代码中给大家解释：</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;       //教会电脑输出字符到屏幕上 </span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span>          <span class="c1">//听好了，电脑！下面我将下命令！    </span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;helloworld&quot;</span><span class="p">);</span><span class="c1">//给我在屏幕上输出helloworld     </span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>            <span class="c1">//我的命令下完了。</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h2>命令①：<code>#include &lt;stdio.h&gt;</code></h2>
+<ul>
+<li><strong>教会电脑输出字符到屏幕上</strong></li>
+<li>我们如何理解这个命令的意思呢？名叫电脑的士兵再次登场。我们再来回顾一下直接给电脑下命令让它走上台阶的命令。</li>
+<li>
+<ul>
+<li>你：『电脑！』</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>电脑：『到！』</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>你：『走上台阶！』</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>电脑：『不会！』</li>
+</ul>
+</li>
+<li>『他』并不会走路，所以我们才要特别细致的一步一步教会他如何走路。那如果我们派一位教官来教会他走路呢？</li>
+<li>
+<ul>
+<li>你：『教官！』</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>教官：『到！』</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>你：『教会电脑走路！』</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>教官：『是！』</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>教官：『电脑，记住了，走路的时候先迈左腿，再迈右腿，双手保持身体平衡，身体前倾！』</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>电脑：『记住了！』</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>你：『电脑！走上台阶』</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>电脑：『是！』</li>
+</ul>
+</li>
+<li>在教官的教导下，『他』学会了如何走路，然后我们再下命令，『他』当然会执行。</li>
+<li>我们回到刚才C语言中，把<code>#include &lt;stdio.h&gt;</code>删掉看看会出现什么情况。</li>
+<li>代码：</li>
+</ul>
+<div class="highlight"><pre><span></span>//此行代码被删除
+int main(void){            
+    printf(&quot;helloworld&quot;);    
+    return 0;            
+}
+</pre></div>
+
+
+<ul>
+<li>当我们运行程序的时候，发现程序并没有运行,并且提示了错误。</li>
+<li>
+<ul>
+<li>第三行：<code>printf(“helloworld”);</code>
+<strong>incompatible implicit declaration of built-in function 'printf'</strong></li>
+</ul>
+</li>
+<li>为什么删除了<code>#include &lt;stdio.h&gt;</code>后，<code>printf("helloworld");</code>会被电脑认为是错误呢？</li>
+<li>这和刚才士兵的情况是一样的。</li>
+<li>
+<ul>
+<li>你：『电脑！』</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>电脑：『到！』</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>你：『输出helloworld！』</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>电脑：『不会！』</li>
+</ul>
+</li>
+<li>printf是输出命令，而printf输出命令电脑本身不会，需要学习，而学习的过程就在stdio.h文件中，如果我们加上<code>#include &lt;stdio.h&gt;</code>后，结果就成为了这样。</li>
+<li>
+<ul>
+<li>你：『stdio！』</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>stdio：『到！』</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>你：『教会电脑使用printf！』</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>stdio：『是！』</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>stdio：『电脑，记住了，printf就是在显示器上输出一串字符』</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>电脑：『记住了！』</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>你：『电脑！printf(“helloworld”);』</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>电脑：『helloworld！』</li>
+</ul>
+</li>
+<li>其实电脑能学的还有很多东西，比如说数学能力。一行<code>#include &lt;math.h&gt;</code>就可以让电脑学会cos、sin等数学函数。</li>
+<li>笔者在测试的时候发现了一个有趣的现象，由于最新的翻译官都太聪明了，在你将程序说给翻译官听的时候，翻译官就发现你的程序含有printf但是忘记加入了<code>#include&lt;stdio.h&gt;</code>，所以翻译官在翻译给电脑听的时候，私自将<code>#include&lt;stdio.h&gt;</code>加上了，结果程序成功的执行，但还是给出了warning警告：</li>
+<li><img alt="2015-04-25/553b4f8c48e98" src="http://box.kancloud.cn/2015-04-25_553b4f8c48e98.png"></li>
+<li>虽然现在翻译官聪明了，但我们还是要确保程序中加入了<code>#include&lt;stdio.h&gt;</code>，以免某天翻译官犯傻，导致你写的程序出现了不可预知的错误。</li>
+</ul>
+<h2>命令②：<code>int main(void)</code></h2>
+<ul>
+<li><strong>真正命令的开始</strong></li>
+<li>我们看到这条命令的后面跟着一个大括号{，而我们程序的最后一行也有一个回括号}，这两个括号之间的命令将是我们整个程序中最主要的部分，就如同main的中文释义『主要的』那样。</li>
+</ul>
+<h2>命令③：<code>printf("helloworld");</code></h2>
+<ul>
+<li><strong>在显示器上打印（输出）helloworld</strong></li>
+<li>printf的学名叫做格式化输出，为何叫格式化输出我们马上就会讲解。</li>
+</ul>
+<h2>命令④：<code>return 0;</code></h2>
+<ul>
+<li><strong>结束命令（关闭程序）</strong></li>
+<li>这条命令后，程序就会关闭，也就是黑乎乎的窗口会被关闭，做事要有始有终，你要是不告诉电脑你的命令下达完了，他还会傻乎乎的等着你下一条命令呢，快让电脑休息下吧。对了，聪明的翻译官也并没有让我们的程序直接结束，而是让我们“press any key to continue”(按任意键继续)，不然没等我们看到helloworld，这个黑乎乎的窗口就关闭了。</li>
+</ul>
+<h2>初学者的基本框架</h2>
+<ul>
+<li>讲了这么多，不知道你对helloworld的程序能够掌握到那里，但是无论如何，要记住初学者的C语言框架，在很长一段时间内，你的代码都需要写上这四行代码：</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt; </span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span> 
+<span class="err">……</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> 
+<span class="p">}</span>
+</pre></div>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'reot'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = '顺序结构';
+                var disqus_url = './顺序结构.html';
+
+            var disqus_config = function () {
+                this.language = "zh";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="https://www.facebook.com/yanjing1996"><i class="fa fa-facebook-square fa-lg"></i> facebook</a></li>
+                <li class="list-group-item"><a href="http://www.weibo.com/u/2507325304"><i class="fa fa-weibo fa-lg"></i> weibo</a></li>
+                <li class="list-group-item"><a href="http://github.com/xiaohuanshu"><i class="fa fa-github-square fa-lg"></i> github</a></li>
+              </ul>
+            </li>
+
+
+
+
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" target="_blank">
+                You can modify those links in your config file
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2016 xiaohuanshu
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="./theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="./theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'reot'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>
